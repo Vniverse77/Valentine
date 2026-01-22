@@ -91,12 +91,124 @@ h1 {
     justify-content: center;
     border: 3px dashed var(--primary-red);
     overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease;
 }
 
 .photo-placeholder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+/* Main photo animation */
+.photo-placeholder:not(.gallery .photo-placeholder) {
+    animation: floatPhoto 4s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.3);
+}
+
+.photo-placeholder:not(.gallery .photo-placeholder):hover {
+    transform: scale(1.03) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(255, 77, 109, 0.4);
+}
+
+@keyframes floatPhoto {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Gallery photos - Polaroid style with tilt */
+.gallery .photo-placeholder {
+    background: white;
+    padding: 8px 8px 30px 8px;
+    border: none;
+    border-radius: 4px;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.gallery .photo-placeholder:nth-child(1) {
+    transform: rotate(-3deg);
+    animation: wiggle1 3s ease-in-out infinite;
+}
+
+.gallery .photo-placeholder:nth-child(2) {
+    transform: rotate(2deg);
+    animation: wiggle2 3.5s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.gallery .photo-placeholder:nth-child(3) {
+    transform: rotate(-2deg);
+    animation: wiggle3 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.gallery .photo-placeholder:hover {
+    transform: rotate(0deg) scale(1.15) translateY(-15px);
+    box-shadow:
+        0 25px 50px rgba(255, 77, 109, 0.3),
+        0 0 30px rgba(255, 77, 109, 0.2);
+    z-index: 10;
+}
+
+.gallery .photo-placeholder:hover img {
+    filter: brightness(1.1) saturate(1.2);
+}
+
+.gallery .photo-placeholder::after {
+    content: "💕";
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery .photo-placeholder:hover::after {
+    opacity: 1;
+}
+
+@keyframes wiggle1 {
+    0%,
+    100% {
+        transform: rotate(-3deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-1deg) translateY(-5px);
+    }
+}
+
+@keyframes wiggle2 {
+    0%,
+    100% {
+        transform: rotate(2deg) translateY(0);
+    }
+    50% {
+        transform: rotate(4deg) translateY(-5px);
+    }
+}
+
+@keyframes wiggle3 {
+    0%,
+    100% {
+        transform: rotate(-2deg) translateY(0);
+    }
+    50% {
+        transform: rotate(0deg) translateY(-5px);
+    }
 }
 
 .love-button {
@@ -145,6 +257,7 @@ h1 {
 }
 
 .hidden-msg {
+    display: none;
     margin-top: 30px;
     padding: 20px;
     background: #fff;
@@ -387,6 +500,111 @@ h1 {
     background: var(--primary-red);
     color: white;
     opacity: 1;
+}
+
+/* YouTube Music Card */
+.youtube-card {
+    background: linear-gradient(145deg, #ffffff, #fff5f7);
+}
+
+.youtube-cover {
+    background: linear-gradient(135deg, var(--soft-pink), var(--primary-red));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.youtube-icon {
+    width: 60px;
+    height: 60px;
+    color: white;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.youtube-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(255, 77, 109, 0.5));
+}
+
+.music-waves {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 30px;
+}
+
+.music-waves span {
+    width: 6px;
+    background: linear-gradient(to top, white, var(--soft-pink));
+    border-radius: 3px;
+    animation: wave 1s ease-in-out infinite;
+}
+
+.music-waves span:nth-child(1) {
+    height: 10px;
+    animation-delay: 0s;
+}
+
+.music-waves span:nth-child(2) {
+    height: 20px;
+    animation-delay: 0.1s;
+}
+
+.music-waves span:nth-child(3) {
+    height: 30px;
+    animation-delay: 0.2s;
+}
+
+.music-waves span:nth-child(4) {
+    height: 20px;
+    animation-delay: 0.3s;
+}
+
+.music-waves span:nth-child(5) {
+    height: 10px;
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    0%,
+    100% {
+        transform: scaleY(0.5);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+.youtube-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, var(--primary-red), var(--deep-red));
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    animation: glowBtn 2s ease-in-out infinite;
+}
+
+.youtube-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(255, 77, 109, 0.5);
+}
+
+@keyframes glowBtn {
+    0%,
+    100% {
+        box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 77, 109, 0.6);
+    }
 }
 
 /* Mobile Responsive */
