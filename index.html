@@ -4,14 +4,218 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>For My Special Someone</title>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <link
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400&display=swap"
             rel="stylesheet"
         />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.jsx"></script>
+        <!-- Click to Start Overlay -->
+        <div id="start-overlay" class="start-overlay">
+            <div class="overlay-title">💕 Click to Start Masham 💕</div>
+            <div class="overlay-subtitle">Enjoy 😉</div>
+        </div>
+
+        <!-- Floating Hearts Background -->
+        <div class="hearts-bg" id="hearts-bg"></div>
+
+        <!-- Main Container -->
+        <div class="container">
+            <h1>Happy Anniversaries Mashajygymm!</h1>
+
+            <div class="distance-card">
+                <p class="subtitle">Miles apart, but never at heart.</p>
+
+                <!-- Main Photo -->
+                <div class="photo-placeholder">
+                    <img src="img/main.jpg" alt="Us" />
+                </div>
+
+                <!-- Gallery -->
+                <div class="gallery-title">The Meaning of My Life 💖</div>
+                <div class="gallery">
+                    <div class="photo-placeholder" style="height: 150px">
+                        <img src="img/birtd1.jpg" alt="Memory 1" />
+                    </div>
+                    <div class="photo-placeholder" style="height: 150px">
+                        <img src="img/sunshine.jpg" alt="Memory 2" />
+                    </div>
+                    <div class="photo-placeholder" style="height: 150px">
+                        <img src="img/bchain.jpg" alt="Memory 3" />
+                    </div>
+                </div>
+
+                <!-- Music Section -->
+                <div class="music-section">
+                    <div class="music-section-title">🎵 Our Tracks 🎵</div>
+                    <div class="tracks-container">
+                        <!-- Track 1 -->
+                        <div class="track-card">
+                            <div class="track-cover">
+                                <img
+                                    src="img/covers/arabeni.png"
+                                    alt="Ara Beni Lutfen"
+                                />
+                            </div>
+                            <div class="track-info">
+                                <p class="track-title">Ara Beni Lutfen</p>
+                            </div>
+                            <audio controls>
+                                <source
+                                    src="music/Ara Beni Lütfen [LZnXSIQdvhs].mp3"
+                                    type="audio/mpeg"
+                                />
+                            </audio>
+                            <a
+                                href="music/Ara Beni Lütfen [LZnXSIQdvhs].mp3"
+                                download
+                                class="download-btn"
+                                title="Download"
+                                >⬇</a
+                            >
+                        </div>
+
+                        <!-- Track 2 -->
+                        <div class="track-card">
+                            <div class="track-cover">
+                                <img
+                                    src="img/covers/daylight.png"
+                                    alt="Daylight"
+                                />
+                            </div>
+                            <div class="track-info">
+                                <p class="track-title">Daylight</p>
+                            </div>
+                            <audio controls>
+                                <source
+                                    src="music/Daylight [Y1gswBe-DjM].mp3"
+                                    type="audio/mpeg"
+                                />
+                            </audio>
+                            <a
+                                href="music/Daylight [Y1gswBe-DjM].mp3"
+                                download
+                                class="download-btn"
+                                title="Download"
+                                >⬇</a
+                            >
+                        </div>
+
+                        <!-- Track 3 -->
+                        <div class="track-card">
+                            <div class="track-cover">
+                                <img
+                                    src="img/covers/lovemeharder.png"
+                                    alt="Love Me Harder"
+                                />
+                            </div>
+                            <div class="track-info">
+                                <p class="track-title">Love Me Harder</p>
+                            </div>
+                            <audio controls>
+                                <source
+                                    src="music/Love Me Harder [uvXtC13GlxQ].mp3"
+                                    type="audio/mpeg"
+                                />
+                            </audio>
+                            <a
+                                href="music/Love Me Harder [uvXtC13GlxQ].mp3"
+                                download
+                                class="download-btn"
+                                title="Download"
+                                >⬇</a
+                            >
+                        </div>
+
+                        <!-- Track 4 -->
+                        <div class="track-card">
+                            <div class="track-cover">
+                                <img
+                                    src="img/covers/senidusundum.png"
+                                    alt="Seni Dusundum"
+                                />
+                            </div>
+                            <div class="track-info">
+                                <p class="track-title">Seni Dusundum</p>
+                            </div>
+                            <audio controls>
+                                <source
+                                    src="music/Seni Düşündüm [ooEzDusqxXU].mp3"
+                                    type="audio/mpeg"
+                                />
+                            </audio>
+                            <a
+                                href="music/Seni Düşündüm [ooEzDusqxXU].mp3"
+                                download
+                                class="download-btn"
+                                title="Download"
+                                >⬇</a
+                            >
+                        </div>
+
+                        <!-- Track 5 -->
+                        <div class="track-card">
+                            <div class="track-cover">
+                                <img
+                                    src="img/covers/napiyosunmesela.png"
+                                    alt="napiyosun mesela"
+                                />
+                            </div>
+                            <div class="track-info">
+                                <p class="track-title">napiyosun mesela ?</p>
+                            </div>
+                            <audio controls>
+                                <source
+                                    src="music/napıyosun mesela ？ [X7rAgqfJexM].mp3"
+                                    type="audio/mpeg"
+                                />
+                            </audio>
+                            <a
+                                href="music/napıyosun mesela ？ [X7rAgqfJexM].mp3"
+                                download
+                                class="download-btn"
+                                title="Download"
+                                >⬇</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote -->
+                <div class="quote-box" id="quote-display">
+                    "Distance means so little when someone means so much."
+                </div>
+
+                <!-- Surprise Button -->
+                <button
+                    class="love-button"
+                    id="surprise-btn"
+                    onclick="showLove()"
+                >
+                    Click for a Surprise
+                </button>
+
+                <!-- Hidden Message -->
+                <div id="hidden-msg" class="hidden-msg">
+                    <h3>Delivered by Brunduk...</h3>
+                    <p>
+                        Distance is just a number. My heart is always with you.
+                        This little web page is a small gift to remind you how
+                        much I love you Kümüş. I miss you so much and I can't
+                        wait to spend more days with you after a few years!
+                    </p>
+                    <button
+                        class="love-button heart-btn"
+                        onclick="changeQuote()"
+                    >
+                        I Love You So Much! ❤️
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
