@@ -120,6 +120,30 @@ h1 {
     background-color: var(--deep-red);
 }
 
+.heart-btn {
+    background: linear-gradient(135deg, var(--primary-red), var(--deep-red));
+    animation: heartPulse 1.5s ease-in-out infinite;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.heart-btn:hover {
+    animation: none;
+    transform: scale(1.15);
+}
+
+@keyframes heartPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px 10px rgba(255, 77, 109, 0);
+    }
+}
+
 #hidden-msg {
     display: none;
     margin-top: 30px;

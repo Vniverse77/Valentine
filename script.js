@@ -42,7 +42,7 @@ setInterval(createHeart, 300);
 
 function showLove() {
   const msg = document.getElementById("hidden-msg");
-  const quoteDisplay = document.getElementById("quote-display");
+  const surpriseBtn = document.getElementById("surprise-btn");
 
   if (msg) {
     msg.style.display = "block";
@@ -50,13 +50,28 @@ function showLove() {
     msg.scrollIntoView({ behavior: "smooth" });
   }
 
+  // Hide the surprise button after clicking
+  if (surpriseBtn) {
+    surpriseBtn.style.display = "none";
+  }
+
+  // Extra heart burst animation when the button is clicked
+  for (let i = 0; i < 15; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+}
+
+// Change quote with heart burst animation
+function changeQuote() {
+  const quoteDisplay = document.getElementById("quote-display");
+
   if (quoteDisplay) {
     // Change quote randomly
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     quoteDisplay.innerText = `"${randomQuote}"`;
   }
 
-  // Extra heart burst animation when the button is clicked
+  // Heart burst animation
   for (let i = 0; i < 15; i++) {
     setTimeout(createHeart, i * 100);
   }
