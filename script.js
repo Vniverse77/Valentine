@@ -36,7 +36,8 @@ function createHeart() {
   }, 6000);
 }
 
-// Start floating hearts
+// Start floating heards
+// 
 setInterval(createHeart, 300);
 
 // Heart burst animation
